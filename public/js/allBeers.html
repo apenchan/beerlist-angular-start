@@ -1,0 +1,5 @@
+<div class="display-all-beers">
+    <div class="row">
+        <div class="col-sm-4" ng-repeat="beer in beers">{{beer.name}} <img class="beer-img" ng-src="{{beer.image_url}}"><a ng-click="removeBeer($index)">Remove</div>
+    </div>
+</div>
