@@ -29,6 +29,23 @@ app.factory('beerFactory', function ($http) {
         })
     };
 
+    beerFactory.addReview = function(id, newReview){
+        // var id = id.beer._id
+        return $http.post('/beers/' + id + '/reviews', newReview)
+        .then(function(response){
+            console.log(response.data)
+            return response.data
+        })
+    };
+
+    // beerFactory.getReviews = function(id){
+    //     return $http.get('/beers' + id + '/reviews')
+    //     .then(function(response){
+    //         console.log(response.data)
+    //         return response.data
+    //     })
+    // }
+
     return beerFactory;
 });
 

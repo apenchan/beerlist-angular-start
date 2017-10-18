@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //   numberOfRatings: 5
 // });
 
+// beer1.reviews.push({text: "This beer is DOPE!", username: "StevenTheScot"});
 // beer1.save(function(err, data){
 //   if(err){
 //     console.log(err);
@@ -102,8 +103,22 @@ app.post("/beers/:id/rating", function(req, res){
       res.send('i updated the beer!')
     })
   })
-
 })
+
+//post a review per beer
+app.post('/beers/:id/reviews', function(req, res) {
+  Beer.findById(req.params.id).then(function(beer){
+    var review = req.body;
+    beer.reviews.push(review)
+    beer.save(function(err, beer){
+      if(err){
+        console.log(err);
+      } else {
+        res.send(beer);
+      }
+    })
+  })
+});
 
 app.listen(8000, function() {
   console.log("yo yo yo, on 8000!!")
