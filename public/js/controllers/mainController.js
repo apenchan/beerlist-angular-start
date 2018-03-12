@@ -34,14 +34,6 @@ app.controller('mainCtrl', function ($scope, beerFactory) {
 			})
 	}
 
-	$scope.getReviews = function(){
-		beerFactory.getReviews(this.beer._id.reviews)
-		.then(function(data){
-			$scope.beer.reviews = beer.reviews;
-		})
-
-	}
-
 });
 
 // app.controller('mainCtrl', function($scope, beerFactory){

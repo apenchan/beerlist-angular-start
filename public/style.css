@@ -1,3 +1,16 @@
 .beer-img{
     height: 200px;
 }
+.submit-beer{
+    height: 50vh;
+}
+.display-beers{
+    text-align: center;
+    padding: 40px;
+}
+.display-beers-ul{
+    list-style-type: none;
+}
+.beer-name{
+    text-align: center;
+}

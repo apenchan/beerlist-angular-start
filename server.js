@@ -107,6 +107,7 @@ app.post("/beers/:id/rating", function(req, res){
 
 //post a review per beer
 app.post('/beers/:id/reviews', function(req, res) {
+  
   Beer.findById(req.params.id).then(function(beer){
     var review = req.body;
     beer.reviews.push(review)
@@ -119,6 +120,17 @@ app.post('/beers/:id/reviews', function(req, res) {
     })
   })
 });
+
+//delete a review
+app.delete('/beers/:id/reviews/:reviewId', function(req, res){
+  Beer.findByIdAndUpdate(req.params.id, {$pull: { "reviews": {_id:req.params.reviewId}}}, function(err, beer){
+    if(err){
+      console.log(err);
+    } else {
+      res.send(beer);
+    }
+  })
+})
 
 app.listen(8000, function() {
   console.log("yo yo yo, on 8000!!")

@@ -38,13 +38,13 @@ app.factory('beerFactory', function ($http) {
         })
     };
 
-    // beerFactory.getReviews = function(id){
-    //     return $http.get('/beers' + id + '/reviews')
-    //     .then(function(response){
-    //         console.log(response.data)
-    //         return response.data
-    //     })
-    // }
+    beerFactory.getBeer = function(id){
+        return $http.get('/beers/' + id)
+        .then(function(response){
+            console.log(response.data)
+            return response.data
+        })
+    }
 
     return beerFactory;
 });

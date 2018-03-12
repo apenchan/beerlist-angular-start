@@ -9,15 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
+    "@uirouter/angularjs": "^1.0.9",
     "angular": "^1.6.2",
     "angular-star-rating": "^3.0.8",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "express": "^4.15.3",
     "mongoose": "^4.12.2"
-  },
-  "devDependencies": {
-    "@angular/cli": "^1.4.7"
   }
 }

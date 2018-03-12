@@ -1,0 +1,26 @@
+<div class="container">
+		<div class="row submit-beer">
+			<div class="col-md-6 col-md-offset-3">
+				<h1 class="text-center">BeerList</h1>
+				<div class="page-header"></div>
+				<!-- render beers here -->
+				<form>
+					<h3>Add a new beer</h3>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Beer Name" ng-model="newBeer.name"></input>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Style" ng-model="newBeer.style"></input>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Image URL" ng-model="newBeer.image_url"></input>
+					</div>
+					<button type="button" ng-click="addBeer(newBeer)" class="btn btn-primary">Add</button>
+				</form>
+			</div>
+		</div>
+			<div class="beers-directives">
+				<beer-directive my-beers="beers"></beer-directive>
+			</div>
+  </div>
+  <div ui-view></div>
